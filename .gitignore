@@ -1,0 +1,11 @@
+.idea/
+
+initial/
+
+__pycache__/
+
+*.xhtml
+*.xml
+
+
+.env
