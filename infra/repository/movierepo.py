@@ -1,8 +1,8 @@
 from infra.configs.connection import DBConnectionHandler
-from infra.entities.filmes import Filme
+from infra.entities.movies import Movies
 
 
-class FilmesRepository:
+class MovieRepository:
     """
     Repositório de filmes
     """
@@ -19,10 +19,10 @@ class FilmesRepository:
         :return:
         """
         with self._db.session() as session:
-            filmes = session.query(Filme).all()
+            filmes = session.query(Movies).all()
             return filmes
 
-    def insert_filme(self, filme: Filme):
+    def insert_filme(self, filme: Movies):
         """
         Insere um filme
         :param filme:
@@ -36,7 +36,7 @@ class FilmesRepository:
                 session.rollback()
                 raise
 
-    def delete_filme(self, filme: Filme):
+    def delete_filme(self, filme: Movies):
         """
         Deleta um filme
         :param filme:
@@ -50,7 +50,7 @@ class FilmesRepository:
                 session.rollback()
                 raise
 
-    def update_filme(self, filme: Filme):
+    def update_filme(self, filme: Movies):
         """
         Atualiza um filme
         :param filme:
