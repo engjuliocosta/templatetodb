@@ -4,18 +4,18 @@ from infra.entities.movies import Movies
 
 class MovieRepository:
     """
-    Repositório de filmes
+    Movie Repository
     """
 
     def __init__(self):
         """
-        Construtor da classe
+        Class Constructor
         """
         self._db = DBConnectionHandler()
 
     def select_filmes(self):
         """
-        Seleciona todos os filmes
+        Select movies
         :return:
         """
         with self._db.session() as session:
@@ -24,7 +24,7 @@ class MovieRepository:
 
     def insert_filme(self, filme: Movies):
         """
-        Insere um filme
+        Insertion of a movie
         :param filme:
         :return:
         """
@@ -38,7 +38,7 @@ class MovieRepository:
 
     def delete_filme(self, filme: Movies):
         """
-        Deleta um filme
+        Delete a movie
         :param filme:
         :return:
         """
@@ -52,7 +52,7 @@ class MovieRepository:
 
     def update_filme(self, filme: Movies):
         """
-        Atualiza um filme
+        Update a movie
         :param filme:
         :return:
         """
